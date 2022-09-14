@@ -99,3 +99,47 @@ constraint id_carro_ordem_fk foreign key(id_carro) references carro(id_carro)
 
 
 )
+
+-- criando clientes
+
+insert into clients(nome,cpf)
+		values('Antonio X', 12346789)
+		('deotado manaco', 14386789),
+('jusé geninho', 12386799)
+
+-- criando marcas
+INSERT INTO marca
+VALUES ('fiat'),
+('vw')
+
+
+INSERT INTO carro (id_marca, id_client)
+VALUES (3,1),(4,2)
+
+insert into funcionarios(nome,cpf,tipo)
+values('Carlitos',123456677,'mecanico'),
+('Andre',123457654,'mecanico'),
+('Rosa',1234656677,'secretaria'),
+('Romildo',123456677,'mecanico')
+
+alter table mecanico 
+ADD COLUMN especialide VARCHAR(15);
+
+
+
+insert into mecanico(id_funcionario,especialide)
+values(1,'carburadores'),
+(2,'tratores')
+
+
+
+insert into equipe(nome_equipe)
+values('fogareiros'),
+('trabalhaBem')
+
+insert into equipe_mecanico
+values(1,2),
+(2,1)
+
+
+
