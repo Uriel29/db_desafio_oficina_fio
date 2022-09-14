@@ -59,8 +59,43 @@ create table mecanico(
 id_funcionario int,
 
 		constraint funcionario_fk foreign key(id_funcionario) references funcionarios(id_funcionario)
-                                
-                
+
+);
+-- alterando mecanico
+ALTER TABLE mecanico
+ADD COLUMN especialidade varchar(255)
+
+-- criando equipe
+create table equipe(
+		id_equipe int auto_increment primary key,
+
+nome_equipe varchar(30)
 
 
 );
+
+-- criando mecanico
+create table equipe_mecanico(
+		
+id_equipe int,
+id_mecanico int,
+		constraint equipe_fk foreign key(id_equipe) references equipe(id_equipe),
+                constraint mecanico_fk foreign key(id_mecanico) references mecanico(id_mecanico)
+
+)
+
+-- criando ordem_servico
+create table ordem_sevico(
+id_ordem int auto_increment primary key,
+id_client int,		
+id_equipe int,
+
+id_carro int,
+ constraint client_ordem_fk foreign key(id_client) references clients(id_client),
+constraint equipe_ordem_fk foreign key(id_equipe) references equipe(id_equipe),
+
+constraint id_carro_ordem_fk foreign key(id_carro) references carro(id_carro)
+
+
+
+)
