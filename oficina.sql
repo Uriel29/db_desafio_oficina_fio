@@ -166,4 +166,35 @@ constraint id_tabela_precos_fk foreign key(id_tabela_precos) references tabela_p
 
 )
 
+insert into tabela_precos(tipo,preco) 
+values('reparo de bomba', 300),
+('troca de óleo', 100),
+('troca de tampa da valvula',100),
+('troca de pastilha freio', 300)
 
+insert into tabela_precos_tipos(id_tabela_precos)
+values(1),(3),(4),(2)
+
+insert into ordem_servico(
+id_client,
+id_equipe,
+id_carro,	
+tipo,	
+valor,
+status_client,
+status,
+
+preco_tipos)
+values(1,2,2,'reparo',3000,'permitido','em andamento',2)
+
+insert into ordem_servico(
+id_client,
+id_equipe,
+id_carro,	
+tipo,	
+valor,
+status_client,
+status,
+
+preco_tipos)
+values(2,1,2,'reparo',5000,'permitido','completo',2)
