@@ -252,3 +252,12 @@ status,
 
 preco_tipos)
 values(1,1,1,'reparo',5000,'permitido','completo',2)
+
+
+select distinct nome, nome_equipe from mecanico, equipe_mecanico, funcionarios, ordem_servico
+
+select c.nome, modelo_carro from clients as c join carro  as car ON c.id_client = car.id_client
+
+select c.nome, modelo_carro,  valor*10  as total from clients as c, carro, ordem_servico GROUP BY c.nome having(nome) = "Antonio X"
+
+select c.nome, modelo_carro,  valor*10  as total from clients as c, carro, ordem_servico GROUP BY c.nome having(modelo_carro) = "Siena"
