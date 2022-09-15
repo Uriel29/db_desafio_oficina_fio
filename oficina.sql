@@ -223,4 +223,32 @@ select clients.nome, carro.modelo_carro from ordem_servico, carro, clients
 
 select clients.nome, carro.modelo_carro, id_ordem from ordem_servico, carro, clients where clients.id_client = 1
 
+select  distinct c.nome, modelo_carro,  valor*10  as total from clients as c, carro, ordem_servico
 
+select  distinct c.nome, modelo_carro,  valor*10  as total from clients as c, carro, ordem_servico GROUP BY c.nome
+
+select c.nome, modelo_carro,  valor*10  as total from clients as c, carro, ordem_servico GROUP BY c.nome ORDER BY total desc
+
+insert into ordem_servico(
+id_client,
+id_equipe,
+id_carro,	
+tipo,	
+valor,
+status_client,
+status,
+
+preco_tipos)
+values(1,1,1,'reparo',5000,'permitido','completo',2)
+
+insert into ordem_servico(
+id_client,
+id_equipe,
+id_carro,	
+tipo,	
+valor,
+status_client,
+status,
+
+preco_tipos)
+values(1,1,1,'reparo',5000,'permitido','completo',2)
