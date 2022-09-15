@@ -198,3 +198,29 @@ status,
 
 preco_tipos)
 values(2,1,2,'reparo',5000,'permitido','completo',2)
+
+
+select nome,marca from marca,clients where nome = 'Antonio X'
+
+ALTER TABLE carro
+ADD COLUMN modelo_carro varchar(255)
+
+UPDATE `carro` SET
+`id_carro` = '1',
+`id_marca` = '3',
+`id_client` = '1',
+`modelo_carro` = 'Siena'
+WHERE `id_carro` = '1';
+
+UPDATE `carro` SET
+`id_carro` = '2',
+`id_marca` = '4',
+`id_client` = '2',
+`modelo_carro` = 'Gol'
+WHERE `id_carro` = '2';
+
+select clients.nome, carro.modelo_carro from ordem_servico, carro, clients
+
+select clients.nome, carro.modelo_carro, id_ordem from ordem_servico, carro, clients where clients.id_client = 1
+
+
