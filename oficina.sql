@@ -142,4 +142,28 @@ values(1,2),
 (2,1)
 
 
+ALTER TABLE ordem_servico
+ADD COLUMN tipo enum('reparo','preventiva','troca de óleo'),
+ADD COLUMN valor float, 
+ADD COLUMN status_client enum('não permitido','permitido'),
+ADD COLUMN status enum('em andamento','esperando peças','completo')
+ADD COLUMN data_emissao datetime,
+ADD COLUMN data_conclusao datetime
+
+
+create table tabela_precos(
+ id_tabela_precos int auto_increment primary key,
+ tipo varchar(255),
+preco float
+ 
+)
+
+create table tabela_precos_tipos(
+id_precos_tipos int auto_increment primary key,
+id_tabela_precos int,		
+
+constraint id_tabela_precos_fk foreign key(id_tabela_precos) references tabela_precos(id_tabela_precos)
+
+)
+
 
